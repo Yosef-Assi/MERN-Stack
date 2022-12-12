@@ -10,7 +10,7 @@ const MessageForm = (props) => {
         e.preventDefault();
         props.onNewColor(color);
         props.onNewWidth(width);
-        setBox(box => [...box,{"color":color,"width":width+"px","heigh":width+"px"}]);
+        setBox(box => [...box,{"color":color,"width":width+"px","height":width+"px"}]);
       
 
 
@@ -38,6 +38,7 @@ const MessageForm = (props) => {
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-evenly',
+                flexWrap:'wrap'
             }}>
                 {box.map((item, i) =>
                 <div>
