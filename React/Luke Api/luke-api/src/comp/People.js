@@ -8,7 +8,7 @@ const People = (props) => {
              .then( response => setPeople(response.data) )
              .catch( err => console.log(err));
        
-    },[] );
+    },[props.ida] );
   return (
     <>
 
