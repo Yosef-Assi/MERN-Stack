@@ -1,12 +1,14 @@
 
 import React, { useState,useEffect } from 'react'
 import axios from 'axios';
+import { navigate } from '@reach/router';
+
 const Plantes = (props) => {
     const [plantes,setPlantes]=useState('')
     useEffect(() => {
         axios.get(`https://swapi.dev/api/planets/`+props.idp)
              .then( response => setPlantes(response.data) )
-             .catch( err => console.log(err));
+             .catch( () => navigate("/error"));
        
     },[props.idp] );
   return (
