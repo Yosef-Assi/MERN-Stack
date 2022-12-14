@@ -10,10 +10,9 @@ function App() {
     <div className="App">
      <Home/>
      <Router>
-      <People path="people/:ida"/>
-      <Plantes path="planets/:idp"/>
-      <Error path="/error"/>
-
+        <People path="people/:ida"/>
+        <Plantes path="planets/:idp"/>
+        <Error path="/error"/>
      </Router>
     </div>
   );

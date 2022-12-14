@@ -8,8 +8,8 @@ const MessageForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.onNewColor(color);
-        props.onNewWidth(width);
+        // props.onNewColor(color);
+        // props.onNewWidth(width);
         setBox(box => [...box,{"color":color,"width":width+"px","height":width+"px"}]);
       
 
