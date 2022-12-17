@@ -1,0 +1,58 @@
+
+db.students.insert({name:"Yosef" ,home_state:"Palestine" ,lucky_number:8,birthday:{month:3,day:6,year:1999}})
+
+db.students.insert({name:"Sameer" ,home_state:"Palestine" ,lucky_number:2,birthday:{month:3,day:6,year:1998}})
+
+db.students.insert({name:"Rami" ,home_state:"Palestine" ,lucky_number:8,birthday:{month:6,day:5,year:1999}})
+
+db.students.insert({name:"Moean" ,home_state:"Palestine" ,lucky_number:2,birthday:{month:7,day:2,year:1992}})
+
+
+db.students.insert({name:"Jami" ,home_state:"Palestine" ,lucky_number:4,birthday:{month:9,day:2,year:1994}})
+
+
+db.students.find()
+
+db.students.find({$or:[{home_state:"California"},{home_state:"Washington"}]}).pretty()
+
+db.students.find({lucky_number:{$gt:3}}).pretty()
+
+db.students.find({lucky_number:{$lte:10}}).pretty()
+
+
+db.students.find({$and:[{lucky_number:{$gt:1}},{lucky_number:{$lt:10}}]}).pretty()
+
+
+
+db.students.updateMany({}, {$set:{interests:["coding", "brunch","MongoDB"]}})
+
+db.students.update({name: "Jami"},{$push: {interests: 'snowboarding'}})
+db.students.update({name: "Sameer"},{$push: {interests: 'asd'}})
+db.students.update({name: "Rami"},{$push: {interests: 'xzc'}})
+db.students.update({name: "Moean"},{$push: {interests: 'tre'}})
+db.students.updateMany({}, {$push:{interests:["Trrr"]}})
+
+
+db.students.update({name: "Sameer"},{$push: {interests: 'taxes'}})
+
+db.students.update({name: "Sameer"},{$pull: {interests: 'taxes'}})
+
+db.students.remove({home_state:"California"})
+
+db.students.remove({lucky_number:{$gt:5}}, true)
+
+
+db.students.updateMany({}, {$set:{number_of_belts:0}})
+
+db.students.updateMany({}, { $inc: { number_of_belts: 1 } })
+db.students.updateMany({home_state:"Jordan"}, { $inc: { belts_earned: 1 } })
+
+
+
+db.students.updateMany(
+   {},
+   { $rename: { 'number_of_belts': 'belts_earned'} }
+)
+
+db.students.updateMany({}, {$unset: {"lucky_number": ""}})
+db.students.updateMany({}, {$set:{updated_on:new Date()}})
