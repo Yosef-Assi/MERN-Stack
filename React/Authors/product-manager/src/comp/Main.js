@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link } from '@reach/router';
 import ShowAuthors from './ShowAuthors';
-import AddAuthor from './AddAuthor';
 
 export default () => {
     const [author, setAuthor] = useState([]);
@@ -19,7 +18,6 @@ export default () => {
         <div>
         
             <Link to={"/new/"}>Add an author</Link>
-            {/* <AddAuthor onSubmitProps={createAuthor} initialName=""/> */}
             {loaded && <ShowAuthors author={author}/>}
         </div>
     )
