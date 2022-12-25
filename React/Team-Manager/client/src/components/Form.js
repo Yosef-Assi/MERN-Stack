@@ -3,7 +3,7 @@ const Form = (props) => {
     const {onSubmitProps,initialName,initialPosition,errors}=props;
     const [name, setName] = useState(initialName); 
     const [position, setPosition] = useState(initialPosition); 
-    const [status, setStatus] = useState({game1:0,game2:1,game3:2}); 
+    const [status, setStatus] = useState({game1:0,game2:0,game3:0}); 
     const onSubmitHandler = e => {
         e.preventDefault();
         onSubmitProps({name,position,status});
@@ -13,7 +13,7 @@ const Form = (props) => {
 
         <>
         <form onSubmit={onSubmitHandler}>
-        {errors.map((err, index) => <p key={index}>{err}</p>)}
+        {errors.map((msg, index) => <p key={index}>{msg}</p>)}
             <p>
                 <label>Name</label><br/>
                 <input type="text"  name="name" onChange={(e)=>setName(e.target.value)} value={name}/>

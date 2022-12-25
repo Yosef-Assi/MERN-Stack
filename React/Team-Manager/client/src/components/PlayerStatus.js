@@ -57,11 +57,11 @@ const PlayerStatus = (props) => {
                             <button onClick={(e)=>click1(1,player._id)} style={{backgroundColor:player.status.game2==1?"green" :""}}>Playing</button>
                             <button onClick={(e)=>click1(2,player._id)} style={{backgroundColor:player.status.game2==2?"red" :""}}>Not Playing</button>
                             </div>:
-                             <div>
-                             <button onClick={(e)=>click1(0,player._id)} style={{backgroundColor:player.status.game3==0?"yellow" :""}}>Undecided</button>
-                             <button onClick={(e)=>click1(1,player._id)} style={{backgroundColor:player.status.game3==1?"green" :""}}>Playing</button>
-                             <button onClick={(e)=>click1(2,player._id)} style={{backgroundColor:player.status.game3==2?"red" :""}}>Not Playing</button>
-                             </div>
+                            <div>
+                            <button onClick={(e)=>click1(0,player._id)} style={{backgroundColor:player.status.game3==0?"yellow" :""}}>Undecided</button>
+                            <button onClick={(e)=>click1(1,player._id)} style={{backgroundColor:player.status.game3==1?"green" :""}}>Playing</button>
+                            <button onClick={(e)=>click1(2,player._id)} style={{backgroundColor:player.status.game3==2?"red" :""}}>Not Playing</button>
+                            </div>
                             }
                             </td>
                         </tr>
