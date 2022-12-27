@@ -6,7 +6,7 @@ import LoginForm from '../components/LoginForm';
 export const Main = () => {
   return (
     <div>
-      <h1>Project Manager</h1>
+      <h1>Pet Shelter</h1>
        <ListProjects/>
     </div>
   )
